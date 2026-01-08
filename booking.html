@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking | Odd Duck</title>
+    <style>
+        body { background: #0a0a0a; color: #fff; font-family: sans-serif; margin: 0; padding-top: 100px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #000; position: fixed; width: 100%; top: 0; }
+        .logo { color: #d4af37; text-decoration: none; font-size: 1.8rem; font-weight: bold; text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { color: #fff; text-decoration: none; }
+        .form-card { max-width: 500px; margin: 50px auto; background: #111; padding: 40px; border: 1px solid #d4af37; border-radius: 4px; }
+        h2 { color: #d4af37; text-align: center; margin-bottom: 30px; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 20px; background: #222; border: 1px solid #444; color: #fff; }
+        button { width: 100%; padding: 15px; background: #d4af37; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Odd Duck</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+    <div class="form-card">
+        <h2>Table Reservation</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Phone (0301 7864478)" required>
+            <input type="date" required>
+            <select>
+                <option>Number of Guests</option>
+                <option>2 People</option>
+                <option>4 People</option>
+                <option>8+ People</option>
+            </select>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</body>
+</html>
