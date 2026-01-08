@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Odd Duck</title>
+    <style>
+        :root { --gold: #d4af37; --dark: #0d0d0d; }
+        body { background: var(--dark); color: #fff; font-family: sans-serif; margin: 0; padding-top: 100px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #000; position: fixed; width: 100%; top: 0; border-bottom: 1px solid #222; }
+        .logo { color: var(--gold); font-size: 1.8rem; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { color: #fff; text-decoration: none; }
+
+        .menu-container { max-width: 1000px; margin: 50px auto; padding: 20px; }
+        h1 { text-align: center; color: var(--gold); font-family: serif; font-size: 3rem; margin-bottom: 50px; }
+        .menu-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        .category h2 { border-bottom: 2px solid var(--gold); color: var(--gold); padding-bottom: 10px; margin-bottom: 25px; text-transform: uppercase; font-size: 1.2rem; }
+        .item { display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        .price { color: var(--gold); font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Odd Duck</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+    <div class="menu-container">
+        <h1>Signature Menu</h1>
+        <div class="menu-section">
+            <div class="category">
+                <h2>Mutton Karahi</h2>
+                <div class="item"><span>Mutton Special Karahi</span><span class="price">Rs. 2300</span></div>
+                <div class="item"><span>Mutton Zaitoon Karahi</span><span class="price">Rs. 2600</span></div>
+                <div class="item"><span>Mutton Badami (White)</span><span class="price">Rs. 2650</span></div>
+                <div class="item"><span>Mutton Achari Karahi</span><span class="price">Rs. 2350</span></div>
+            </div>
+            <div class="category">
+                <h2>Chicken & Biryani</h2>
+                <div class="item"><span>Desi Chicken Karahi</span><span class="price">Rs. 2400</span></div>
+                <div class="item"><span>Chicken Chinioti Karahi</span><span class="price">Rs. 1075</span></div>
+                <div class="item"><span>Chicken Biryani</span><span class="price">Rs. 350</span></div>
+                <div class="item"><span>Mutton Biryani</span><span class="price">Rs. 550</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
