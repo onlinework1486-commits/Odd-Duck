@@ -3,36 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Silver Dragon Faisalabad</title>
+    <title>About Us | Silver Dragon</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --gold: #d4af37; --dark: #0a0a0a; --white: #ffffff; --gray: #888; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: var(--dark); color: var(--white); line-height: 1.6; }
-        
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --text-main: #ffffff;
+            --text-dim: #cccccc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--dark-bg); 
+            color: var(--text-main); 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6;
+        }
+
         /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.8rem; text-decoration: none; text-transform: uppercase; font-weight: bold; }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #000;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.8rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
         nav ul li a:hover { color: var(--gold); }
 
-        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-        
-        /* Header Section */
-        .about-header { text-align: center; margin-bottom: 60px; }
-        .about-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); margin-bottom: 10px; }
-        .gold-line { width: 80px; height: 3px; background: var(--gold); margin: 10px auto; }
+        /* Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-        
-        /* Story Text */
-        .story-box h2 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 20px; font-size: 2rem; }
-        .story-box p { color: #ccc; margin-bottom: 20px; font-size: 1.05rem; }
-        .contact-info { margin-top: 30px; padding: 20px; border-left: 3px solid var(--gold); background: #111; }
-        .contact-info p { margin-bottom: 5px; font-weight: 600; color: var(--gold); }
+        .header-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+        }
 
-        /* Hours Table */
-        .hours-card { background: #111; padding: 35px; border-radius: 8px; border: 1px solid #222; }
-        .hours-card h3 { color: var(--gold); margin-
+        /* Layout Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* About Us Text */
+        .info-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .info-section p {
+            margin-bottom: 20px;
+            color: var(--text-dim);
+        }
+
+        /* Operating Hours Card */
+        .hours-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+        .hours-card h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+        }
+        .row:last-child { border-bottom: none; }
+        .day { font-weight: 600; color: var(--gold); }
+
+        /* Map Section */
+        .map-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .map-section h2 {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 25px;
+        }
+        .map-frame {
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Fix */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .header-title h1 { font-size: 2.2rem; }
+            nav { padding: 15px 5%; }
+            .logo { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Silver Dragon</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header-title">
+            <h1>About Us</h1>
+        </div>
+
+        <div class="about-grid">
+            <div class="info-section">
+                <h2>Our Story</h2>
+                <p>Silver Dragon is known for its authentic Pakistani cuisine, high-quality ingredients, and exceptional service. We offer a warm ambiance for family dinners, parties, and special occasions.</p>
+                <p>Located in the heart of Faisalabad, we bring you the traditional taste of Karahi prepared with fresh butter and desi ghee, ensuring every meal is a celebration of flavor.</p>
+                
+                <div style="margin-top: 30px; background: #000; padding: 20px; border-left: 4px solid var(--gold);">
+                    <p style="color: var(--gold); margin-bottom: 5px; font-weight: bold;">Contact Support:</p>
+                    <p style="font-size: 1.2rem; color: #fff;">0301 7864478</p>
+                </div>
+            </div>
+
+            <div class="hours-card">
+                <h3>Opening Hours</h3>
+                <div class="row"><span class="day">Monday</span><span>12–6 am, 2 pm–1 am</span></div>
+                <div class="row"><span class="day">Tuesday</span><span>2 pm–1 am</span></div>
+                <div class="row"><span class="day">Wednesday</span><span>2 pm–1 am</span></div>
+                <div class="row"><span class="day">Thursday</span><span>2 pm–1 am</span></div>
+                <div class="row"><span class="day">Friday</span><span>2 pm–1 am</span></div>
+                <div class="row"><span class="day">Saturday</span><span>2 pm–1 am</span></div>
+                <div class="row"><span class="day">Sunday</span><span>6 pm–12 am</span></div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h2>Find Us</h2>
+            <div class="map-frame">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.9458428574167!2d73.10313887556734!3d31.415617252309192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392268159676579d%3A0xc3974d682496b86b!2sSusan%20Rd%2C%20Faisalabad%2C%20Punjab!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Silver Dragon Restaurant. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
