@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking | Odd Duck</title>
+    <title>Book a Table | Odd Duck Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #0a0a0a; color: #fff; font-family: sans-serif; margin: 0; padding-top: 100px; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #000; position: fixed; width: 100%; top: 0; }
-        .logo { color: #d4af37; text-decoration: none; font-size: 1.8rem; font-weight: bold; text-transform: uppercase; }
+        :root { --gold: #d4af37; --dark: #0a0a0a; --card: #111; --white: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--dark); color: var(--white); line-height: 1.6; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.8rem; text-decoration: none; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { color: #fff; text-decoration: none; }
-        .form-card { max-width: 500px; margin: 50px auto; background: #111; padding: 40px; border: 1px solid #d4af37; border-radius: 4px; }
-        h2 { color: #d4af37; text-align: center; margin-bottom: 30px; }
-        input, select { width: 100%; padding: 12px; margin-bottom: 20px; background: #222; border: 1px solid #444; color: #fff; }
-        button { width: 100%; padding: 15px; background: #d4af37; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        nav ul li a:hover { color: var(--gold); }
+
+        /* Booking Form Section */
+        .container { max-width: 600px; margin: 60px auto; padding: 0 20px; }
+        .form-card { background: var(--card); padding: 40px; border-radius: 8px; border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { font-family: 'Playfair Display', serif; color: var(--gold); text-align: center; margin-bottom: 10px; font-size: 2.5rem; }
+        p.subtitle { text-align: center; color: #888; margin-bottom: 30px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        label { display: block; color: var(--gold); font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 20px; background: #222; border: 1px solid #333; color: #fff; border-radius: 4px; outline: none; transition: 0.3s; }
+        input:focus { border-color: var(--gold); background: #2a2a2a; }
+
+        button { width: 100%; padding: 15px; background: var(--gold); color: #000; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; }
+        button:hover { background: #fff; transform: translateY(-2px); }
+        button:disabled { background: #555; cursor: not-allowed; }
+
+        #success-msg { display: none; background: #1a472a; color: #fff; padding: 15px; text-align: center; margin-top: 20px; border-radius: 4px; border: 1px solid #2e7d32; font-weight: 600; }
+
+        footer { text-align: center; padding: 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #222; margin-top: 50px; }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="logo">Odd Duck</a>
         <ul>
@@ -27,20 +48,70 @@
             <li><a href="booking.html">Booking</a></li>
         </ul>
     </nav>
-    <div class="form-card">
-        <h2>Table Reservation</h2>
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="tel" placeholder="Phone (0301 7864478)" required>
-            <input type="date" required>
-            <select>
-                <option>Number of Guests</option>
-                <option>2 People</option>
-                <option>4 People</option>
-                <option>8+ People</option>
-            </select>
-            <button type="submit">Confirm Booking</button>
-        </form>
+
+    <div class="container">
+        <div class="form-card">
+            <h1>Table Reservation</h1>
+            <p class="subtitle">Experience Excellence at Odd Duck</p>
+            
+            <form id="bookingForm">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="e.g., 0301 7864478" required>
+
+                <label>Reservation Date</label>
+                <input type="date" name="date" required>
+
+                <label>Number of Guests</label>
+                <select name="guests" required>
+                    <option value="1-2">1-2 People</option>
+                    <option value="3-4">3-4 People</option>
+                    <option value="5-8">5-8 People</option>
+                    <option value="Large Group (10+)">Large Group (10+)</option>
+                </select>
+
+                <button type="submit" id="submitBtn">Confirm Booking</button>
+            </form>
+
+            <div id="success-msg">
+                ✔ Success! Your table at Odd Duck is being processed.
+            </div>
+        </div>
     </div>
+
+    <footer>
+        © 2026 Odd Duck Restaurant | Premium Dining Faisalabad
+    </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwsHegnv_TJWAPuCQCwr0aVHYBmK3EpRj7xYwyrrWA0j5FIgRwpvPb0vrX4tkWg8K8d/exec';
+        const form = document.getElementById('bookingForm');
+        const btn = document.getElementById('submitBtn');
+        const msg = document.getElementById('success-msg');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.innerHTML = "Processing...";
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    btn.disabled = false;
+                    btn.innerHTML = "Confirm Booking";
+                    msg.style.display = "block";
+                    form.reset();
+                    // Hide message after 6 seconds
+                    setTimeout(() => { msg.style.display = "none"; }, 6000);
+                })
+                .catch(error => {
+                    btn.disabled = false;
+                    btn.innerHTML = "Confirm Booking";
+                    alert("Something went wrong. Please check your internet connection.");
+                });
+        });
+    </script>
+
 </body>
 </html>
